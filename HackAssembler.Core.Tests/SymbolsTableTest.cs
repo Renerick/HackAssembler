@@ -9,7 +9,7 @@ namespace HackAssembler.Core.Tests
         {
             var table = new SymbolsTable();
             table.Add("Sym");
-            Assert.Equal(table["Sym"], 16);
+            Assert.Equal(16, table["Sym"]);
         }
         
         [Fact]
@@ -17,7 +17,7 @@ namespace HackAssembler.Core.Tests
         {
             var table = new SymbolsTable();
             table.Add("Sym", 5);
-            Assert.Equal(table["Sym"], 5);
+            Assert.Equal(5, table["Sym"]);
         }
 
         [Fact]
@@ -33,18 +33,18 @@ namespace HackAssembler.Core.Tests
         public void GetUndeclaredAndAddTest()
         {
             var table = new SymbolsTable();
-            Assert.Equal(table.Get("Sym1"), 16);
+            Assert.Equal(16, table.Get("Sym1"));
             table.Add("Sym1", 5);
-            Assert.Equal(table.Get("Sym1"), 5);
+            Assert.Equal(5, table.Get("Sym1"));
         }
 
         [Fact]
         public void GetUndeclaredTest()
         {
             var table = new SymbolsTable();
-            Assert.Equal(table.Get("Sym1"), 16);
-            Assert.Equal(table.Get("Sym2"), 17);
-            Assert.Equal(table.Get("Sym1"), 16);
+            Assert.Equal(16, table.Get("Sym1"));
+            Assert.Equal(17, table.Get("Sym2"));
+            Assert.Equal(16, table.Get("Sym1"));
         }
     }
 }
