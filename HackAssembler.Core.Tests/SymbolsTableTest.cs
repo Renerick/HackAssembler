@@ -9,7 +9,7 @@ namespace HackAssembler.Core.Tests
         {
             var table = new SymbolsTable();
             table.Add("Sym");
-            Assert.Equal(table.Get("Sym"), 16);
+            Assert.Equal(table["Sym"], 16);
         }
         
         [Fact]
@@ -17,7 +17,7 @@ namespace HackAssembler.Core.Tests
         {
             var table = new SymbolsTable();
             table.Add("Sym", 5);
-            Assert.Equal(table.Get("Sym"), 5);
+            Assert.Equal(table["Sym"], 5);
         }
 
         [Fact]
